@@ -1,0 +1,96 @@
+.really-sure-modal-bg
+  position: fixed
+  height: 100%
+  width: 100%
+  background: #000
+  z-index: 100
+  display: none
+  top: 0
+  left: 0
+
+.really_sure_section
+  width: auto
+  border-radius: 3px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  padding: 5px
+
+@mixin top_color($color)
+  background-color: $color
+  border: 1px solid
+  border-color: darken($color,45%)
+  color: #000
+
+.really-sure-modal
+  font-family: 'helvetica'
+  padding: 20px
+  visibility: hidden
+  background: #eeeeee
+  z-index: 101
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border-radius: 5px
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)
+  .close-really-sure-modal
+    font-size: 22px
+    line-height: .5
+    position: absolute
+    top: 8px
+    right: 11px
+    color: #aaa
+    text-shadow: 0 -1px 1px rbga(0, 0, 0, 0.6)
+    font-weight: bold
+    cursor: pointer
+  .really_sure_heading
+    @extend .really_sure_section
+    margin-top: 10px
+    font-size: 24px
+    font-weight: 700
+    &.warn
+      @include top_color(#ffa)
+  .really_sure_description
+    @extend .really_sure_section
+    background: #ddd
+    border: 1px solid #aaa
+  .really-sure-input
+    width: 100%
+    font-size: 18px
+    line-height: 24px
+    border: 1px solid #666
+    -moz-border-radius: 5px
+    -webkit-border-radius: 5px
+    border-radius: 5px
+
+@media (max-width: 629px)
+  .really-sure-modal
+    position: fixed
+    top: 50px
+    left: 10px
+    right: 10px
+    min-height: 200px
+
+
+@media (min-width: 630px)
+  .really-sure-modal
+    position: absolute
+    top: 100px
+    left: 50%
+    margin-left: -300px
+    width: 520px
+    &.small
+      width: 200px
+      margin-left: -140px
+    &.medium
+      width: 400px
+      margin-left: -240px
+    &.large
+      width: 600px
+      margin-left: -340px
+    &.xlarge
+      width: 800px
+      margin-left: -440px
+
+
+
